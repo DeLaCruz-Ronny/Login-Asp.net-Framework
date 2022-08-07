@@ -1,0 +1,8 @@
+clave123
+correo@gmail.com
+
+text123
+login@gmail.com
+
+123clave
+123@gmail.com

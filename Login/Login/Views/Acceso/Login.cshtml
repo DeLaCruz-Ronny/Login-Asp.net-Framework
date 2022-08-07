@@ -1,0 +1,44 @@
+﻿@model Login.Models.Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="~/Content/Css/Login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            
+            <!-- Login Form -->
+            <form class="mt-5" action="@Url.Action("Login","Acceso")" method="post">
+                <input type="text" id="login" class="fadeIn second" name="Correo" placeholder="Correo">
+                <input type="text" id="password" class="fadeIn third" name="Clave" placeholder="Clave">
+                <!-- Alert -->
+                @if (ViewData["Mensaje"] != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewData["Mensaje"]
+                    </div>
+                }
+                <input type="submit" class="fadeIn fourth" value="Acceder">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                No tienes una cuenta? <a class="underlineHover" href="@Url.Action("Registrar","Acceso")">Registrarse</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
